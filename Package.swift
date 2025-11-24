@@ -1,0 +1,39 @@
+// swift-tools-version: 6.2
+import PackageDescription
+
+extension String {
+    static let ipv4Standard = "IPv4 Standard"
+    var tests: Self { "\(self) Tests" }
+}
+
+extension Target.Dependency {
+    static let ipv4Standard = Self.target(name: .ipv4Standard)
+    static let rfc791 = Self.product(name: "RFC 791", package: "swift-rfc-791")
+}
+
+let package = Package(
+    name: "swift-ipv4-standard",
+    platforms: [
+        .macOS(.v15),
+        .iOS(.v18),
+        .tvOS(.v18),
+        .watchOS(.v11)
+    ],
+    products: [
+        .library(name: .ipv4Standard, targets: [.ipv4Standard]),
+    ],
+    dependencies: [
+        .package(path: "../swift-rfc-791"),
+    ],
+    targets: [
+        .target(
+            name: .ipv4Standard,
+            dependencies: [.rfc791]
+        ),
+        .testTarget(
+            name: .ipv4Standard.tests,
+            dependencies: [.ipv4Standard]
+        ),
+    ],
+    swiftLanguageModes: [.v6]
+)
