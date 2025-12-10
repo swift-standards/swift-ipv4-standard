@@ -23,7 +23,7 @@ let package = Package(
         .library(name: .ipv4Standard, targets: [.ipv4Standard]),
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-standards/swift-rfc-791", from: "0.2.0"),
+        .package(url: "https://github.com/swift-standards/swift-rfc-791", from: "0.2.2"),
     ],
     targets: [
         .target(
