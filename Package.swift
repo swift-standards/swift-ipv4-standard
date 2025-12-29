@@ -17,13 +17,13 @@ let package = Package(
         .macOS(.v26),
         .iOS(.v26),
         .tvOS(.v26),
-        .watchOS(.v26)
+        .watchOS(.v26),
     ],
     products: [
-        .library(name: .ipv4Standard, targets: [.ipv4Standard]),
+        .library(name: .ipv4Standard, targets: [.ipv4Standard])
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-standards/swift-rfc-791", from: "0.2.3"),
+        .package(url: "https://github.com/swift-standards/swift-rfc-791", from: "0.3.0")
     ],
     targets: [
         .target(
