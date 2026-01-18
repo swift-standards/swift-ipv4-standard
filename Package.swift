@@ -17,23 +17,19 @@ let package = Package(
         .macOS(.v26),
         .iOS(.v26),
         .tvOS(.v26),
-        .watchOS(.v26),
+        .watchOS(.v26)
     ],
     products: [
-        .library(name: .ipv4Standard, targets: [.ipv4Standard])
+        .library(name: "IPv4 Standard", targets: ["IPv4 Standard"])
     ],
     dependencies: [
         .package(path: "../swift-rfc-791")
     ],
     targets: [
         .target(
-            name: .ipv4Standard,
+            name: "IPv4 Standard",
             dependencies: [.rfc791]
-        ),
-        .testTarget(
-            name: .ipv4Standard.tests,
-            dependencies: [.ipv4Standard]
-        ),
+        )
     ],
     swiftLanguageModes: [.v6]
 )
