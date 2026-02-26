@@ -31,7 +31,13 @@ let package = Package(
         .target(
             name: "IPv4 Standard",
             dependencies: [.rfc791]
-        )
+        ),
+        .testTarget(
+            name: "IPv4 Standard Tests",
+            dependencies: [
+                "IPv4 Standard",
+            ]
+        ),
     ],
     swiftLanguageModes: [.v6]
 )
@@ -42,6 +48,7 @@ for target in package.targets where ![.system, .binary, .plugin, .macro].contain
         .enableUpcomingFeature("ExistentialAny"),
         .enableUpcomingFeature("InternalImportsByDefault"),
         .enableUpcomingFeature("MemberImportVisibility"),
+        .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
         .enableExperimentalFeature("Lifetimes"),
         .enableExperimentalFeature("SuppressedAssociatedTypes"),
         .enableExperimentalFeature("SuppressedAssociatedTypesWithDefaults"),
