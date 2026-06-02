@@ -25,7 +25,7 @@ let package = Package(
         .library(name: "IPv4 Standard", targets: ["IPv4 Standard"])
     ],
     dependencies: [
-        .package(path: "../../swift-ietf/swift-rfc-791")
+        .package(url: "https://github.com/swift-ietf/swift-rfc-791.git", branch: "main")
     ],
     targets: [
         .target(
