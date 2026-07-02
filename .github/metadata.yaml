@@ -1,6 +1,6 @@
 # .github/metadata.yaml
 # Triaged by AI-assisted bulk pass (2026-04-29).
-description: "IPv4 meta-package combining RFC 791 in Swift."
+description: "IPv4 meta-package composing RFC 791 for Swift."
 topics:
   - standards
   - ipv4
