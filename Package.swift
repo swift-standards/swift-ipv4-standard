@@ -1,7 +1,5 @@
-// swift-tools-version: 6.3.3
+// swift-tools-version: 6.4
 import PackageDescription
-
-
 
 extension String {
     static let ipv4Standard = "IPv4 Standard"
@@ -16,10 +14,10 @@ extension Target.Dependency {
 let package = Package(
     name: "swift-ipv4-standard",
     platforms: [
-        .macOS("27"),
-        .iOS("27"),
-        .tvOS("27"),
-        .watchOS("27")
+        .macOS(.v27),
+        .iOS(.v27),
+        .tvOS(.v27),
+        .watchOS(.v27),
     ],
     products: [
         .library(name: "IPv4 Standard", targets: ["IPv4 Standard"])
@@ -35,7 +33,7 @@ let package = Package(
         .testTarget(
             name: "IPv4 Standard Tests",
             dependencies: [
-                "IPv4 Standard",
+                "IPv4 Standard"
             ]
         ),
     ],
