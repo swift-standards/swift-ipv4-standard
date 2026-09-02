@@ -1,16 +1,6 @@
 // swift-tools-version: 6.4
 import PackageDescription
 
-extension String {
-    static let ipv4Standard = "IPv4 Standard"
-    var tests: Self { "\(self) Tests" }
-}
-
-extension Target.Dependency {
-    static let ipv4Standard = Self.target(name: .ipv4Standard)
-    static let rfc791 = Self.product(name: "RFC 791", package: "swift-rfc-791")
-}
-
 let package = Package(
     name: "swift-ipv4-standard",
     platforms: [
@@ -20,15 +10,26 @@ let package = Package(
         .watchOS(.v27),
     ],
     products: [
-        .library(name: "IPv4 Standard", targets: ["IPv4 Standard"])
+        .library(
+            name: "IPv4 Standard",
+            targets: ["IPv4 Standard"]
+        )
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-ietf/swift-rfc-791.git", branch: "main")
+        .package(
+            url: "https://github.com/swift-ietf/swift-rfc-791.git",
+            branch: "main"
+        )
     ],
     targets: [
         .target(
             name: "IPv4 Standard",
-            dependencies: [.rfc791]
+            dependencies: [
+                .product(
+                    name: "RFC 791",
+                    package: "swift-rfc-791"
+                )
+            ]
         ),
         .testTarget(
             name: "IPv4 Standard Tests",
