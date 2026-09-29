@@ -34,7 +34,11 @@ let package = Package(
         .testTarget(
             name: "IPv4 Standard Tests",
             dependencies: [
-                "IPv4 Standard"
+                "IPv4 Standard",
+                .product(
+                    name: "RFC 791",
+                    package: "swift-rfc-791"
+                ),
             ]
         ),
     ],
