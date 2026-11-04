@@ -1,30 +1,3 @@
-# IPv4 Standard
+# swift-ipv4-standard
 
-![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
-
-A unified `IPv4` standard for Swift — composes the RFC 791 address and header definitions into a single namespace, with no Foundation dependency.
-
-## Installation
-
-Add to your `Package.swift`:
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/swift-standards/swift-ipv4-standard.git", branch: "main")
-]
-```
-
-Add the product to your target:
-
-```swift
-.target(
-    name: "App",
-    dependencies: [
-        .product(name: "IPv4 Standard", package: "swift-ipv4-standard")
-    ]
-)
-```
-
-## License
-
-Apache 2.0. See [LICENSE.md](LICENSE.md).
+Use this package when you work with IPv4 addresses or headers and want to write `IPv4` rather than name the RFC. Start from `IPv4.Address`. `IPv4` is the same type as `RFC_791.IPv4`, so depend on swift-rfc-791 directly if you'd rather spell the RFC. For IPv6 use swift-ipv6-standard.
