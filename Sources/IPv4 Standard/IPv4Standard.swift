@@ -1,4 +1,4 @@
-@_exported import RFC_791
+public import RFC_791
 
 public enum IPv4Standard {}
 
